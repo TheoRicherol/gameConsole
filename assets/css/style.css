@@ -36,5 +36,25 @@ section{
 
 
 .produit{
-    height: 15rem;
+    padding: 3%;
+}
+
+.produit img{
+    min-width: 100%;
+}
+
+/* CSS MODAL PANIER */
+
+#img-product img{
+    width: 5rem;
+    height: 6rem;
+}
+
+#delete {
+    height: 2rem;
+}
+
+#more, #less, #number {
+    width: 2rem;
+    height: 2rem;
 }
