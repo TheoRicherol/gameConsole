@@ -1,48 +1,50 @@
 let arrayData = {
     "category": {
         "consoles": [{
-            "product": "Playstation 5",
-            "pics": ["assets/img/ps5-c1.jpg", "assets/img/ps5-c2.jpg", "assets/img/ps5-c3.jpg"],
-            "picsDescription": ["Vue PS5 1", "Vue PS5 2", "Vue PS5 3"],
-            "reference": "Ref : 000001",
-            "price": 499,
-            "infos": "La PS5 est une console de salon avec support optique (Blu-ray 4K) annoncé pour la fin d'année 2020. La PS5 succède logiquement à la PS4 et introduit avec elle une nouvelle architecture matériel avec un CPU Octa-Core AMD cadencé à 3,5 GHz épaulé par 16 Go de RAM GDDR6 et d'un GPU AMD RDNA 2."
-        }, {
-            "product": "Xbox Série X",
-            "pics": ["assets/img/xobxX-c1.jpg", "assets/img/xobxX-c2.jpg", "assets/img/xobxX-c3.jpg"],
-            "picsDescription": ["Vue Xbox Série X 1", "Vue Xbox Série X 2", "Xbox Série X 3"],
-            "reference": "Ref : 000002",
-            "price": 499,
-            "infos": "La Xbox Series X de Microsoft est un concentré de nouvelles technologies. Elle permet de jouer dans les meilleures conditions en 4K et jusqu'à 120 FPS."
-        }, {
-            "product": "3DS",
-            "pics": ["assets/img/console/3DS/3ds-1.jpg", "assets/img/console/3DS/3ds-2.jpg", "assets/img/console/3DS/3ds-3.jpg"],
-            "picsDescription": ["Vue 3DS 1", "Vue 3DS 2", "Vue 3DS 3"],
-            "reference": "Ref : 000003",
-            "price": 120,
-            "infos": "Console portable de huitième génération développée par Nintendo, ayant pour particularité un affichage en 3D autostéréoscopique (sans lunettes)."
-        }, {
-            "product": "PSP",
-            "pics": ["assets/img/console/3DS/psp-1.jpg", "assets/img/console/3DS/psp-2.jpg", "assets/img/console/3DS/psp-3.jpg"],
-            "picsDescription": ["Vue PSP 1", "Vue PSP 2", "Vue PSP 3"],
-            "reference": "Ref : 000003",
-            "price": 130,
-            "infos": "La PSP est bien plus qu'une simple console de jeux : elle permet également, entre autres, d'écouter ou de stocker des MP3 et de visionner des vidéos. Elle dispose également d'une fonctionnalité Wi-Fi pour jouer en réseau et pour surfer sur l'internet."
-        }, {
-            "product": "Switch",
-            "pics": ["assets/img/switch-c1.jpg", "assets/img/switch-c2.jpg", "assets/img/switch-c3.jpg"],
-            "picsDescription": ["Vue Switch 1", "Vue Switch 2", "Vue Switch  3"],
-            "reference": "Ref : 000004",
-            "price": 299,
-            "infos": "La Switch est la septième console de salon de Nintendo. Elle est sortie au début du mois de mars 2017. Celle-ci reprend en partie le principe de la Wii U, mais en rendant son module portable totalement indépendant, ce qui permet d’en profiter aussi bien dans son salon qu’en mobilité."
-        }, {
-            "product": "Playstation 4",
-            "pics": ["assets/img/console/3DS/ps4-1_o.jpg", "assets/img/console/ps4-2.jpg", "assets/img/console/ps4-3.jpg"],
-            "picsDescription": ["Vue PS4 1", "Vue PS4 2", "Vue PS4 3"],
-            "reference": "Ref : 000005",
-            "price": 109,
-            "infos": "Sortie en novembre 2013, la PlayStation 4 est la console la plus populaire de la huitième génération. Elle a l'avantage de la puissance devant la Xbox One et la Switch. Elle dispose d'un lecteur Blu-Ray et d'un disque dur intégré de 500 Go ou de 1 To."
-        }],
+                "product": "Playstation 5",
+                "pics": ["assets/img/ps5-c1.jpg", "assets/img/ps5-c2.jpg", "assets/img/ps5-c3.jpg"],
+                "picsDescription": ["Vue PS5 1", "Vue PS5 2", "Vue PS5 3"],
+                "reference": "Ref : 000001",
+                "price": 499,
+                "infos": "La PS5 est une console de salon avec support optique (Blu-ray 4K) annoncé pour la fin d'année 2020. La PS5 succède logiquement à la PS4 et introduit avec elle une nouvelle architecture matériel avec un CPU Octa-Core AMD cadencé à 3,5 GHz épaulé par 16 Go de RAM GDDR6 et d'un GPU AMD RDNA 2."
+            },
+            {
+                "product": "Xbox Série X",
+                "pics": ["assets/img/xobxX-c1.jpg", "assets/img/xobxX-c2.jpg", "assets/img/xobxX-c3.jpg"],
+                "picsDescription": ["Vue Xbox Série X 1", "Vue Xbox Série X 2", "Xbox Série X 3"],
+                "reference": "Ref : 000002",
+                "price": 499,
+                "infos": "La Xbox Series X de Microsoft est un concentré de nouvelles technologies. Elle permet de jouer dans les meilleures conditions en 4K et jusqu'à 120 FPS."
+            }, {
+                "product": "3DS",
+                "pics": ["assets/img/console/3DS/3ds-1.jpg", "assets/img/console/3DS/3ds-2.jpg", "assets/img/console/3DS/3ds-3.jpg"],
+                "picsDescription": ["Vue 3DS 1", "Vue 3DS 2", "Vue 3DS 3"],
+                "reference": "Ref : 000003",
+                "price": 120,
+                "infos": "Console portable de huitième génération développée par Nintendo, ayant pour particularité un affichage en 3D autostéréoscopique (sans lunettes)."
+            }, {
+                "product": "PSP",
+                "pics": ["assets/img/console/3DS/psp-1.jpg", "assets/img/console/3DS/psp-2.jpg", "assets/img/console/3DS/psp-3.jpg"],
+                "picsDescription": ["Vue PSP 1", "Vue PSP 2", "Vue PSP 3"],
+                "reference": "Ref : 000003",
+                "price": 130,
+                "infos": "La PSP est bien plus qu'une simple console de jeux : elle permet également, entre autres, d'écouter ou de stocker des MP3 et de visionner des vidéos. Elle dispose également d'une fonctionnalité Wi-Fi pour jouer en réseau et pour surfer sur l'internet."
+            }, {
+                "product": "Switch",
+                "pics": ["assets/img/switch-c1.jpg", "assets/img/switch-c2.jpg", "assets/img/switch-c3.jpg"],
+                "picsDescription": ["Vue Switch 1", "Vue Switch 2", "Vue Switch  3"],
+                "reference": "Ref : 000004",
+                "price": 299,
+                "infos": "La Switch est la septième console de salon de Nintendo. Elle est sortie au début du mois de mars 2017. Celle-ci reprend en partie le principe de la Wii U, mais en rendant son module portable totalement indépendant, ce qui permet d’en profiter aussi bien dans son salon qu’en mobilité."
+            }, {
+                "product": "Playstation 4",
+                "pics": ["assets/img/console/3DS/ps4-1_o.jpg", "assets/img/console/ps4-2.jpg", "assets/img/console/ps4-3.jpg"],
+                "picsDescription": ["Vue PS4 1", "Vue PS4 2", "Vue PS4 3"],
+                "reference": "Ref : 000005",
+                "price": 109,
+                "infos": "Sortie en novembre 2013, la PlayStation 4 est la console la plus populaire de la huitième génération. Elle a l'avantage de la puissance devant la Xbox One et la Switch. Elle dispose d'un lecteur Blu-Ray et d'un disque dur intégré de 500 Go ou de 1 To."
+            }
+        ],
         "jeux": [{
                 "product": "Gran Turismo 7 sur Playstation 5",
                 "pics": "assets/img/ps5-1.png",
@@ -322,17 +324,43 @@ let arrayData = {
     }
 }
 
+let basketData = new Array;
+let allObjects = arrayData.category;
 
-let allConsolesObj = arrayData.category.consoles;
-
-for (let consoles in allConsolesObj) {
-    let consoleObj = allConsolesObj[consoles];
-    let divPrin = document.createElement('div'),
-        img = document.createElement('img'),
-        title = document.createElement('p'),
-        description = document.createElement('p');
-    description.innerHTML += " " + consoleObj.price;
-    img.src = consoleObj.pics[0];
-    document.body.appendChild(divPrin);
-    divPrin.appendChild(img);
+for (let objets in allObjects) {
+    let myAnchor = document.createElement('a');
+    myAnchor.href = objets;
+    myAnchor.textContent = objets;
+    document.body.appendChild(myAnchor);
 }
+
+
+let access = document.querySelectorAll('a');
+// console.log(access);
+
+
+arrayData.category.accessoires.forEach(element => {
+    // console.log(element);
+    let divProd = document.createElement('div');
+    divProd.id = element.reference;
+    divProd.className = 'produit';
+    let imgProd = document.createElement('img');
+    imgProd.src = element.pics;
+    let myP = document.createElement('p');
+    myP.textContent = element.product +=  " " + element.infos+ " " + element.price + "€";
+    divProd.appendChild(imgProd)
+    divProd.appendChild(myP);
+    document.body.appendChild(divProd);
+});
+
+let divs = document.querySelectorAll('p');
+
+divs.forEach(element => {
+    element.onclick = function () {
+        element.style.display = "none";
+        console.log(element);
+        basketData.push(element)
+        console.log(basketData)
+
+    }
+});
