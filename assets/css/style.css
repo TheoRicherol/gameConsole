@@ -44,7 +44,7 @@ section{
 }
 
 .produit img{
-    min-width: 100%;
+    /* min-width: 100%;*/
 }
 
 /* CSS MODAL PANIER */
