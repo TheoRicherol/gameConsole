@@ -475,8 +475,8 @@ produits.forEach(produit => {
     let addToBasket = document.createElement('a'),
         descriptif = document.createElement('p'),
         price = document.createElement('p');
-        price.className ='price'
-price.textContent = produit.getAttribute('data-price') + "€";
+    price.className = 'price';
+    price.textContent = produit.getAttribute('data-price') + "€";
     descriptif.textContent = produit.getAttribute('data-descriptif');
     addToBasket.textContent = 'Ajouter au panier';
     produit.appendChild(descriptif);
@@ -486,14 +486,14 @@ price.textContent = produit.getAttribute('data-price') + "€";
     addToBasket.addEventListener('click', function () {
         let quantity = 1;
         let RowSubtotal = produit.getAttribute('data-price') * quantity;
-        goBasketTable(produit.getAttribute('data-cat'), produit.getAttribute('data-ref'), produit.getAttribute('data-name'), produit.getAttribute('data-price'), quantity, RowSubtotal);
+        goBasketTable(produit.getAttribute('data-img'),produit.getAttribute('data-cat'), produit.getAttribute('data-ref'), produit.getAttribute('data-name'), produit.getAttribute('data-price'), quantity, RowSubtotal);
     })
 })
 
 
 let basket = document.createElement('table');
 
-function goBasketTable(cat, ref, name, price, quantity, rowSub) {
+function goBasketTable(img,cat, ref, name, price, quantity, rowSub) {
 
     let total = [];
     let more =
@@ -501,16 +501,16 @@ function goBasketTable(cat, ref, name, price, quantity, rowSub) {
     value="+">+</button>
     <button class="col lg-1 col-1 btn btn-light border border-dark d-flex justify-content-center align-items-center less"
     value="-">-</button>`;
-    let sousTotal = [cat, ref, name, price, quantity, more, rowSub];
+    let sousTotal = [ `<img src="${img}">` ,cat, ref, name, price +"€", quantity, more, rowSub];
     let rows = document.createElement('tr');
     sousTotal.forEach((element, key) => {
         let cells = document.createElement('td');
-        if (key == 4) {
+        if (key == 5) {
             cells.id = 'q' + sousTotal[1];
         }
-        if (key == 6) {
+        if (key == 7) {
             cells.id = 't' + sousTotal[1];
-            cells.className = 'sousTot'
+            cells.className = 'price';
         }
         cells.innerHTML = element;
         console.log(element);

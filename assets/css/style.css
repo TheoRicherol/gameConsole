@@ -158,3 +158,7 @@ button , a{
         color: red;
         font-weight: bolder;
     }
+
+    tr img{
+        height: 5vh;
+    }
