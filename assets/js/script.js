@@ -5,7 +5,7 @@ let arrayData = {
             "picsDescription": ["Vue PS5 1", "Vue PS5 2", "Vue PS5 3"],
             "reference": "000001",
             "price": 499,
-            "infos": "La PS5 est une console de salon avec support optique (Blu-ray 4K) annoncé pour la fin d'année 2020. La PS5 succède logiquement à la PS4 et introduit avec elle une nouvelle architecture matériel avec un CPU Octa-Core AMD cadencé à 3,5 GHz épaulé par 16 Go de RAM GDDR6 et d'un GPU AMD RDNA 2."
+            "infos": "FUTUR CADEAU D'ANOUSONE"
         },
         {
             "product": "Xbox Série X",
@@ -23,7 +23,7 @@ let arrayData = {
             "infos": "Console portable de huitième génération développée par Nintendo, ayant pour particularité un affichage en 3D autostéréoscopique (sans lunettes)."
         }, {
             "product": "PSP",
-            "pics": ["assets/img/console/3DS/psp-1.jpg", "assets/img/console/3DS/psp-2.jpg", "assets/img/console/3DS/psp-3.jpg"],
+            "pics": ["assets/img/console/psp/psp-1.jpg", "assets/img/console/psp/psp-2.jpg", "assets/img/console/psp/psp-3.jpg"],
             "picsDescription": ["Vue PSP 1", "Vue PSP 2", "Vue PSP 3"],
             "reference": "000003",
             "price": 130,
@@ -37,7 +37,7 @@ let arrayData = {
             "infos": "La Switch est la septième console de salon de Nintendo. Elle est sortie au début du mois de mars 2017. Celle-ci reprend en partie le principe de la Wii U, mais en rendant son module portable totalement indépendant, ce qui permet d’en profiter aussi bien dans son salon qu’en mobilité."
         }, {
             "product": "Playstation 4",
-            "pics": ["assets/img/console/3DS/ps4-1_o.jpg", "assets/img/console/ps4-2.jpg", "assets/img/console/ps4-3.jpg"],
+            "pics": ["assets/img/console/ps4/ps4-1_o.jpg", "assets/img/console/ps4/ps4-2.jpg", "assets/img/console/ps4/ps4-3.jpg"],
             "picsDescription": ["Vue PS4 1", "Vue PS4 2", "Vue PS4 3"],
             "reference": "000005",
             "price": 109,
@@ -321,113 +321,252 @@ let arrayData = {
         "infos": "Le volant T300RS Force Feedback permet aux joueurs de réellement s’immerger dans le monde de la course automobile et de perfectionner leurs talents de pilote pour améliorer leurs performances."
     }]
 };
+
 let resultDisplay = document.getElementById('section');
 let basketData = new Array;
 let allObjects = arrayData;
 let nav = document.getElementById('nav');
 
-for (let objets in allObjects) {
-    let myLi = document.createElement('li')
-    let myAnchor = document.createElement('a');
-    myAnchor.href = objets;
-    myAnchor.textContent = objets;
-    myLi.appendChild(myAnchor);
-    nav.appendChild(myLi);
-}
-
-let access = document.querySelectorAll('a');
-
-
-
-
 let divContainer = document.createElement('div');
-divContainer.className = 'container';
+divContainer.className = 'container-fluid';
 let divRow = document.createElement('div');
 divRow.className = 'row';
 
-let catConsoles = document.getElementById('consoles');
-let catJeux = document.getElementById('jeux');
-let catAccessories = document.getElementById('accessories')
-
-catConsoles.addEventListener('click', function (event) {
-    event.preventDefault();
-    let divRow = document.createElement('div');
-    divRow.className = 'row';
-    arrayData.consoles.forEach(element => {
-        if (divContainer.childElementCount > 0) {
-            let divProd = document.createElement('div');
-            divProd.id = element.reference;
-            divProd.dataset.toggle = 'modal';
-            divProd.dataset.target = '#descriptifModal';
-            divProd.className = 'col-lg-4 col-sm-12 col-md-6 produit';
-            let imgProd = document.createElement('img');
-            imgProd.src = element.pics[0];
-            imgProd.className = 'img-fluid';
-            let myP = document.createElement('p');
-            myP.textContent = element.product;
-            divProd.appendChild(imgProd);
-            console.log(divContainer.childElementCount);
-            divContainer.appendChild(divRow);
-            divRow.appendChild(divProd);
-            resultDisplay.appendChild(divContainer);
-            console.log('ok');
-
-        } 
-    });
-})
-
-catJeux.addEventListener('click', function (event) {
-    event.preventDefault();
-    arrayData.jeux.forEach(element => {
-        let divProd = document.createElement('div');
-        divProd.id = element.reference;
-        divProd.dataset.toggle = 'modal';
-        divProd.dataset.target = '#descriptifModal';
-        divProd.className = 'col-lg-4 col-sm-12 col-md-6 produit';
-        let imgProd = document.createElement('img');
-        imgProd.src = element.pics[0];
-        imgProd.className = 'img-fluid';
-        let myP = document.createElement('p');
-        myP.textContent = element.product;
-        divProd.appendChild(imgProd);
-        divProd.appendChild(myP);
-        resultDisplay.appendChild(divContainer);
-        divContainer.appendChild(divRow);
-        divRow.appendChild(divProd);
-    });
-})
-
-catAccessories.addEventListener('click', function (event) {
-    event.preventDefault();
-    arrayData.jeux.forEach(element => {
-        let divProd = document.createElement('div');
-        divProd.id = element.reference;
-        divProd.dataset.toggle = 'modal';
-        divProd.dataset.target = '#descriptifModal';
-        divProd.className = 'col-lg-4 col-sm-12 col-md-6 produit';
-        let imgProd = document.createElement('img');
-        imgProd.src = element.pics[0];
-        imgProd.className = 'img-fluid';
-        let myP = document.createElement('p');
-        myP.textContent = element.product;
-        divProd.appendChild(imgProd);
-        divProd.appendChild(myP);
-        resultDisplay.appendChild(divContainer);
-        divContainer.appendChild(divRow);
-        divRow.appendChild(divProd);
-    });
-})
+let product = document.createElement('p'),
+    img = document.createElement('img'),
+    price = document.createElement('p'),
+    divInfos = document.createElement('div');
 
 
-
-let divs = document.querySelectorAll('.produit');
-
-divs.forEach(div => {
-    div.addEventListener('click', function () {
-
-    })
+arrayData.consoles.forEach(element => {
+    let divProd = document.createElement('div');
+    divProd.id = element.reference;
+    divProd.dataset.name = element.product;
+    divProd.dataset.price = element.price;
+    divProd.dataset.ref = element.reference;
+    divProd.dataset.img = element.pics[0];
+    divProd.dataset.descriptif = element.infos;
+    divProd.dataset.cat = "consoles";
+    divProd.className = 'col-lg-4 col-sm-12 col-md-6 produit overflow-auto';
+    let imgProd = document.createElement('img');
+    imgProd.src = element.pics[0];
+    imgProd.className = 'img-fluid';
+    let myH2 = document.createElement('h2');
+    myH2.textContent = element.product;
+    divProd.appendChild(imgProd);
+    divProd.appendChild(myH2);
+    divContainer.appendChild(divRow);
+    divRow.appendChild(divProd);
+    resultDisplay.appendChild(divContainer);
+});
+arrayData.accessoires.forEach(element => {
+    let divProd = document.createElement('div');
+    divProd.id = element.reference;
+    divProd.dataset.name = element.product;
+    divProd.dataset.price = element.price;
+    divProd.dataset.ref = element.reference;
+    divProd.dataset.img = element.pics[0];
+    divProd.dataset.descriptif = element.infos;
+    divProd.dataset.cat = "accessoires";
+    divProd.className = 'col-lg-4 col-sm-12 col-md-6 produit overflow-auto';
+    let imgProd = document.createElement('img');
+    imgProd.src = element.pics[0];
+    imgProd.className = 'img-fluid';
+    let myH2 = document.createElement('h2');
+    myH2.textContent = element.product;
+    divProd.appendChild(imgProd);
+    divProd.appendChild(myH2);
+    divProd.appendChild(price);
+    divContainer.appendChild(divRow);
+    divRow.appendChild(divProd);
+    resultDisplay.appendChild(divContainer);
+});
+arrayData.jeux.forEach(element => {
+    let divProd = document.createElement('div');
+    divProd.id = element.reference;
+    divProd.dataset.name = element.product;
+    divProd.dataset.price = element.price;
+    divProd.dataset.ref = element.reference;
+    divProd.dataset.img = element.pics[0];
+    divProd.dataset.descriptif = element.infos;
+    divProd.dataset.cat = "jeux";
+    divProd.className = 'col-lg-4 col-sm-12 col-md-6 produit overflow-auto';
+    let imgProd = document.createElement('img');
+    imgProd.src = element.pics;
+    imgProd.className = 'img-fluid';
+    let myH2 = document.createElement('h2');
+    myH2.textContent = element.product;
+    divProd.appendChild(imgProd);
+    divProd.appendChild(myH2);
+    divProd.appendChild(price);
+    divContainer.appendChild(divRow);
+    divRow.appendChild(divProd);
+    resultDisplay.appendChild(divContainer);
 });
 
-for (let i in arrayData) {
-    console.log(i);
+let catConsoles = document.querySelector('#consoles');
+let catJeux = document.querySelector('#jeux');
+let catAccessories = document.querySelector('#accessories');
+let catAll = document.querySelector('#all');
+
+catConsoles.addEventListener('click', function (evt) {
+    evt.preventDefault();
+    console.log('ok');
+    document.querySelectorAll('[data-cat~="consoles"]').forEach(element => {
+        element.classList.remove('invisible');
+    });
+    document.querySelectorAll('[data-cat~="jeux"]').forEach(element => {
+        element.classList.add('invisible');
+    });
+    document.querySelectorAll('[data-cat~="accessoires"]').forEach(element => {
+        element.classList.add('invisible');
+    });
+})
+catJeux.addEventListener('click', function (evt) {
+    evt.preventDefault();
+    console.log('ok');
+    document.querySelectorAll('[data-cat~="consoles"]').forEach(element => {
+        element.classList.add('invisible');
+    });
+    document.querySelectorAll('[data-cat~="accessoires"]').forEach(element => {
+        element.classList.add('invisible');
+    });
+    document.querySelectorAll('[data-cat~="jeux"]').forEach(element => {
+        element.classList.remove('invisible');
+    });
+})
+catAccessories.addEventListener('click', function (evt) {
+    evt.preventDefault();
+    console.log('ok');
+    document.querySelectorAll('[data-cat~="consoles"]').forEach(element => {
+        element.classList.add('invisible');
+    });
+    document.querySelectorAll('[data-cat~="jeux"]').forEach(element => {
+        element.classList.add('invisible');
+    });
+    document.querySelectorAll('[data-cat~="accessoires"]').forEach(element => {
+        element.classList.remove('invisible');
+    });
+})
+catAll.addEventListener('click', function (evt) {
+    evt.preventDefault();
+    console.log('ok');
+    document.querySelectorAll('[data-cat~="consoles"]').forEach(element => {
+        element.classList.remove('invisible');
+    });
+    document.querySelectorAll('[data-cat~="jeux"]').forEach(element => {
+        element.classList.remove('invisible');
+    });
+    document.querySelectorAll('[data-cat~="accessoires"]').forEach(element => {
+        element.classList.remove('invisible');
+    });
+})
+
+let produits = document.querySelectorAll('.produit');
+// Get the modal
+
+
+let modal = document.getElementById("myModal"),
+    span = document.getElementsByClassName("close")[0],
+    modalContent = document.getElementById('modalContent');
+
+
+produits.forEach(produit => {
+    let addToBasket = document.createElement('a'),
+        descriptif = document.createElement('p'),
+        price = document.createElement('p');
+        price.className ='price'
+price.textContent = produit.getAttribute('data-price') + "€";
+    descriptif.textContent = produit.getAttribute('data-descriptif');
+    addToBasket.textContent = 'Ajouter au panier';
+    produit.appendChild(descriptif);
+    produit.appendChild(price);
+    produit.appendChild(addToBasket);
+
+    addToBasket.addEventListener('click', function () {
+        let quantity = 1;
+        let RowSubtotal = produit.getAttribute('data-price') * quantity;
+        goBasketTable(produit.getAttribute('data-cat'), produit.getAttribute('data-ref'), produit.getAttribute('data-name'), produit.getAttribute('data-price'), quantity, RowSubtotal);
+    })
+})
+
+
+let basket = document.createElement('table');
+
+function goBasketTable(cat, ref, name, price, quantity, rowSub) {
+
+    let total = [];
+    let more =
+        `<button class="col lg-1 col-1 btn btn-light border border-dark d-flex justify-content-center align-items-center more"
+    value="+">+</button>
+    <button class="col lg-1 col-1 btn btn-light border border-dark d-flex justify-content-center align-items-center less"
+    value="-">-</button>`;
+    let sousTotal = [cat, ref, name, price, quantity, more, rowSub];
+    let rows = document.createElement('tr');
+    sousTotal.forEach((element, key) => {
+        let cells = document.createElement('td');
+        if (key == 4) {
+            cells.id = 'q' + sousTotal[1];
+        }
+        if (key == 6) {
+            cells.id = 't' + sousTotal[1];
+            cells.className = 'sousTot'
+        }
+        cells.innerHTML = element;
+        console.log(element);
+        rows.appendChild(cells);
+    });
+    basketData.push(sousTotal);
+    basket.appendChild(rows);
+    modalContent.appendChild(basket);
+    let moreBtn = document.querySelectorAll('.more');
+    let lorie = document.getElementById('q' + sousTotal[1]);
+    let thomas = document.getElementById('t' + sousTotal[1]);
+    moreBtn.forEach(element => {
+        element.addEventListener('click', function () {
+            quantity++;
+            sousTotal.splice(4, 1, quantity);
+            let newRowSub = rowSub * quantity;
+            sousTotal.splice(6, 1, newRowSub);
+            console.log(lorie);
+            lorie.innerHTML = quantity;
+            thomas.innerHTML = newRowSub;
+        })
+    })
+    let lessBtn = document.querySelectorAll('.less')
+    lessBtn.forEach(element => {
+        element.addEventListener('click', function () {
+            quantity--;
+            sousTotal.splice(4, 1, quantity);
+            let newRowSub = rowSub * quantity;
+            sousTotal.splice(6, 1, newRowSub);
+            lorie.innerHTML = quantity;
+            thomas.innerHTML = newRowSub;
+        })
+    })
+    modal.style.display = "block";
+}
+
+
+
+
+
+let myBasket = document.getElementById('panierButton');
+
+//Panier vide
+myBasket.onclick = function () {
+    if (basket.childElementCount == 0) {
+        alert('Le panier est vide')
+    } else if (basket.childElementCount >= 1) {
+        modal.style.display = "block";
+    }
+}
+
+span.onclick = function () {
+    modal.style.display = "none";
+}
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
 }

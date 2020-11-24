@@ -13,17 +13,19 @@
 
 <body>
     <header class="position-fixed">
-        <img src="" alt="">
-        <h1>Gaming Box</h1>
+        <img src="assets/img/bandeauTop.png" alt="">
     </header>
     <div class="container-fluid">
         <div class="row">
-            <aside class="col-3 position-fixed">
-                <p>Catégories</p>
-                <nav id="nav">
-                    <li><a href="" id="consoles">Consoles</a></li>
-                    <li><a href="accessories" id="accessories">Accessoires</a></li>
-                    <li><a href="consoles" id="jeux">Jeux</a></li>
+            <aside class="col-2 position-fixed  blackBackground d-flex justify-content-center align-items-start ">
+                <!-- <p>Catégories</p> -->
+                <nav class="mt-5"> 
+                    <ul class="p-2"><button id="consoles" class="button" href="">Consoles</button></ul>
+                    <ul class="p-2"><button id="jeux" class="button" href="">Jeux</button></ul>
+                    <ul class="p-2"><button id="accessories" class="button" href="">Accessoires</button></ul>
+                    <ul class="p-2"><button id="all" class="button" href="">Afficher tout !</button></ul>
+                    <ul class="p-2"><button id="panierButton" class="button" href="">Mon panier</button></ul>
+
                 </nav>
             </aside>
             <section  id="section" class="section">
@@ -32,12 +34,23 @@
         </div>
     </div>
 
+
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div id="modalContent" class="modal-content">
+          <span class="close">&times;</span>
+        </div>
+      </div>
+
+
+      
+
     <!-- Modal descriptif  -->
-    <div class="modal fade" id="descriptifModal" tabindex="-1" role="dialog" aria-labelledby="descriptifModalLabel"
+    <!-- <div class="modal fade" id="descriptifModal" tabindex="-1" role="dialog" aria-labelledby="descriptifModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header d-flex justify-content-center">
+            <div class="modal-content"> -->
+                <!-- <div class="modal-header d-flex justify-content-center">
                     <h2 class="modal-title" id="descriptifModalLabel" data-=""></h2>
                 </div>
 
@@ -59,13 +72,13 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-            </div>
+                    </div> -->
+            <!-- </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- panier -->
-    <div id="popup" class="modal">
+    <!-- <div id="popup" class="modal">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header bg-dark text-white">
@@ -99,7 +112,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
             integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
