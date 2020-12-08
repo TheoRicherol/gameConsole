@@ -33,7 +33,7 @@ aside{
     height: 100vh;
 }
 
-section{
+#section{
     position: absolute;
     top: 20vh;
     right:  0;
